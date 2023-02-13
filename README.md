@@ -797,12 +797,12 @@ rtl_sdr -f 868.95M -s 1600000 - 2>/dev/null | rtl_wmbus -p s -a | nc -u localhos
 
 And receive the telegrams with nc spawned by wmbusmeters.
 ```shell
-wmbusmeters 'rtlwmbus:CMD(nc -lku 4444)'
+wmbusmeters 'rtlwmbus:CMD(nc -lku localhost 4444)'
 ```
 
 Or start nc explicitly in a pipe.
 ```shell
-nc -lku 4444 | wmbusmeters stdin:rtlwmbus
+nc -lku localhost 4444 | wmbusmeters stdin:rtlwmbus
 ```
 
 # Decoding hex string telegrams
